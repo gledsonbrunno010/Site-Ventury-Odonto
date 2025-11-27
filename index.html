@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ventury Odonto — Clínica Odontológica em Águas Claras, Brasília</title>
+    <meta name="description" content="Ventury Odonto — Clíníca odontológica premium em Águas Claras. Implantes, ortodontia, lentes de contato dental, clareamento e muito mais. Agende via WhatsApp." />
+    <meta name="theme-color" content="#7B1D2F"/>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ventury Odonto — Clínica Odontológica em Águas Claras" />
+    <meta property="og:description" content="Atendimento premium, tecnologia avançada e resultados com segurança. Agende sua avaliação via WhatsApp." />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              vinho: '#7B1D2F',
+              'vinho-700': '#691724',
+              bgSoft: '#fbf8f8'
+            },
+            maxWidth: {
+              '1200': '1200px'
+            },
+            boxShadow: {
+              'soft-lg': '0 20px 40px rgba(0,0,0,0.12)'
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Ventury Odonto",
+      "telephone": "+5561999999999",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Pau Brasil, 10 - Sala 734 - Edifício Le Quartier",
+        "addressLocality": "Águas Claras",
+        "addressRegion": "DF",
+        "postalCode": "71926-000",
+        "addressCountry": "BR"
+      },
+      "geo": { "@type":"GeoCoordinates","latitude": -15.846,"longitude": -47.870 }, 
+      "openingHours": "Mo-Fr 08:00-19:00",
+      "priceRange": "$$$"
+    }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-white text-gray-900 antialiased">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
