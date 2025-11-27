@@ -22,14 +22,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md py-2' : 'bg-white/95 py-4'
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-vinho py-4'
+        }`}
     >
       <div className="container max-w-1200 mx-auto px-6 md:px-8 flex items-center justify-between">
         <a href="#inicio" className="flex items-center gap-3 group">
-          <Logo className="h-10 w-auto text-vinho group-hover:opacity-90 transition-opacity" />
-          <span className="hidden md:inline font-bold text-xl text-vinho tracking-tight">
+          <Logo className={`h-10 w-auto transition-colors ${scrolled ? 'text-vinho' : 'text-white'} group-hover:opacity-90`} />
+          <span className={`hidden md:inline font-bold text-xl tracking-tight transition-colors ${scrolled ? 'text-vinho' : 'text-white'}`}>
             Ventury Odonto
           </span>
         </a>
@@ -40,7 +39,8 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-gray-700 hover:text-vinho font-medium transition-colors"
+              className={`font-medium transition-colors ${scrolled ? 'text-gray-700 hover:text-vinho' : 'text-white/90 hover:text-white'
+                }`}
             >
               {link.label}
             </a>
@@ -49,7 +49,10 @@ export default function Navbar() {
             href={`https://wa.me/${WHATSAPP_NUMBER}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-4 inline-flex items-center gap-2 bg-vinho text-white px-5 py-2.5 rounded-full shadow-sm hover:bg-vinho-700 transition-colors font-semibold text-sm"
+            className={`ml-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-full shadow-sm transition-all font-semibold text-sm ${scrolled
+                ? 'bg-vinho text-white hover:bg-vinho-700'
+                : 'bg-white text-vinho hover:bg-white/90'
+              }`}
           >
             WhatsApp
           </a>
@@ -57,7 +60,8 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-vinho hover:bg-vinho/10 rounded-lg transition-colors"
+          className={`md:hidden p-2 rounded-lg transition-colors ${scrolled ? 'text-vinho hover:bg-vinho/10' : 'text-white hover:bg-white/10'
+            }`}
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -67,22 +71,20 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden transition-opacity duration-300 ${
-          open ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
         onClick={() => setOpen(false)}
       />
       <div
-        className={`fixed top-0 right-0 z-50 bg-white w-[80%] max-w-sm h-full shadow-2xl transform transition-transform duration-300 ease-in-out ${
-          open ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed top-0 right-0 z-50 bg-white w-[80%] max-w-sm h-full shadow-2xl transform transition-transform duration-300 ease-in-out ${open ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         <div className="p-6 flex flex-col h-full">
           <div className="flex justify-between items-center mb-8">
-             <span className="font-bold text-xl text-vinho">Menu</span>
-             <button onClick={() => setOpen(false)} className="p-2 text-gray-500 hover:text-vinho">
-               <X className="w-6 h-6" />
-             </button>
+            <span className="font-bold text-xl text-vinho">Menu</span>
+            <button onClick={() => setOpen(false)} className="p-2 text-gray-500 hover:text-vinho">
+              <X className="w-6 h-6" />
+            </button>
           </div>
           <div className="flex flex-col gap-6 text-lg">
             {navLinks.map((link) => (
